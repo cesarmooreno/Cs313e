@@ -16,97 +16,84 @@ UT EID 1:cm62873
 """
 
 
-# TODO: implement this function. You may delete this comment when you are done.
 def length_of_longest_substring_n3(s):
-      # s = "Longhorns"
+    """
+    Docstring got in the way of indenting
+    """
 
-      # subs = []
-
-      # subs+=["string"]
-      # print(subs)
-      # counts = {}
-      no_repeat = True
+    no_repeat = True
       # repeats = []
 
-      longest = 0
-      for i in range(len(s)):
-      # print("i", i)
-
-            for j in range(i +1,len(s) +1 ):
-                  subs = s[i:j] # this sub string will run from the ith element to the jth element of s, the beginning and end shift 
+    longest = 0
+    for i in range(len(s)):
+        for j in range(i +1,len(s) +1 ):
+            subs = s[i:j] # this sub string will run from the ith element to the jth element of s, the beginning and end shift
                   #in here is where it works for some reasone
-                  no_repeat = True
+            no_repeat = True
                   #need to count the frequencies
-                  counts = [0 for c in range(256)]
-                  
-                  for char in subs:
+            counts = [0 for c in range(256)]
+            for char in subs:
                         #ord is an index for the counter
-                        counts[ord(char)] +=1
+                counts[ord(char)] +=1
                         # print(counts)
                         # if a character is repeated
-                  for c in range(len(counts)):
-                        if counts[c]>1:
-                              no_repeat = False
+            for c in range(len(counts)):
+                if counts[c]>1:
+                    no_repeat = False
 
-                  if no_repeat: 
-                        #this difference is how long the substring is 
-                        # diff  = j-i
+            if no_repeat:
+                        #this difference is how long the substring is
                         #update the longest one
                         # print(f"{j}-{i}")
-                        # print("inhere")
-                        longest = max(longest,j-i)
-                        # print("longest", longest)
-      return longest
+                longest = max(longest,j-i)
+    return longest
 
-        
-        
-
-# TODO: implement this function. You may delete this comment when you are done.
 def length_of_longest_substring_n2(s):
-      longest = 0 
-      no_repeat = True
+    """
+    Docstring got in the way of indenting
+    """
+    longest = 0
+    no_repeat = True
       #starting indices
-      for i in range(len(s)):
-            counts = [0 for c in range(256)]
+    for i in range(len(s)):
+        counts = [0 for c in range(256)]
             #ending indices
-            for j in range(i, len(s)):
-                  counts[ord(s[j])]+=1
-                  if counts[ord(s[j])] >1 :
-                        no_repeat = False
-                        #will not allow the longest one to update
-                  # print("where we are", s[j])
-                  
-                  
-                  if no_repeat:
-                        #same difference as earlier, j-i is the length of the substring, 
-                        # print(i,j)
-                        longest=max(longest, j-i +1) 
-                        # print(longest)
-                  # no_repeat = True
-                        # no_repeat = True 
-      return longest 
-                  
-            
-                  #     print("we in here", s[j])
-            
-            #     print(counts)
+        for j in range(i, len(s)):
+            counts[ord(s[j])]+=1
+            if counts[ord(s[j])] >1 :
+                no_repeat = False
+#will not allow the longest one to update
+# print("where we are", s[j])
+
+
+            if no_repeat:
+#same difference as earlier, j-i is the length of the substring,
+# print(i,j)
+                longest=max(longest, j-i +1)
+# print(longest)
+# no_repeat = True
+# no_repeat = True
+    return longest
 
 # s = "Longhorns"
 # print(length_of_longest_substring_n2(s))
 
 
 def length_of_longest_substring_n(s):
-      longest= 0
-      for i in range(len(s)):
-            counts = [0 for c in range(256)]
-            for j in range(i,len(s)):
+    """
+    Docstring got in the way of indenting
+    """
+    longest= 0
+    for i in range(len(s)):
+        counts = [0 for c in range(256)]
+        for j in range(i,len(s)):
                   # print(s[j])
-                  counts[ord(s[j])]+=1
-                  if counts[ord(s[j])] >1:
-                        break
+            counts[ord(s[j])]+=1
+            if counts[ord(s[j])] >1:
+                break
                   # print(i,j)
-                  longest = max(longest, j-i+1)
+            longest = max(longest, j-i+1)
                   # print(longest)
-      return longest
+    return longest
 
 # print(length_of_longest_substring_n(s))
